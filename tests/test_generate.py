@@ -32,3 +32,15 @@ def test_from_file(path):
     key = secret_key.from_file(path)
     with open(path, 'r') as f:
         assert key == f.read().strip()
+
+
+def test_from_env_system_env():
+    key = secret_key.from_env()
+    assert key == 'env_test_content'
+
+
+def test_from_env_call_twice():
+    key1 = secret_key.from_env('unknown_env')
+    key2 = secret_key.from_env('unknown_env')
+    assert key1 == key2
+
