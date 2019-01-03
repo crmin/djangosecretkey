@@ -2,7 +2,7 @@ import os
 from struct import unpack
 
 
-def generate(length=50, prefix='', suffix=''):
+def generate(length=50):
     sample = '1234567890-=!@#$%^&*()_+qwertyuiopasdfghjklzxcvbnm'
     return ''.join([sample[unpack('>I', os.urandom(4))[0] % len(sample)] for i in range(length)])
 
