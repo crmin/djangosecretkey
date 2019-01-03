@@ -1,6 +1,9 @@
 Django Secret Key
 =================
 
+.. image:: https://travis-ci.org/blinglnav/djangosecretkey.svg?branch=master
+   :target: https://travis-ci.org/blinglnav/djangosecretkey
+
 In Django web framework, it has SECRET_KEY variable in settings.py
 this variable use to manage credential values like session.
 
