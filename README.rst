@@ -20,7 +20,6 @@ Install
     pip instal djangosecretkey
 
 This project has not any dependencies. (For test, needs pytest package)
-*You cannot download yet*
 
 Usage
 -----
