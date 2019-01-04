@@ -1,9 +1,15 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - "pip install -r requirements.txt"
-  - "pip install python-coveralls"
+- pip install -r requirements.txt
+- pip install python-coveralls
 script: python -m pytest tests/
 after_success:
-  - coveralls
+- coveralls
+deploy:
+  provider: pypi
+  user: blinglnav
+  distributions: "sdist bdist_wheel"
+  password:
+    secure: ljqouEcHJNmCTvjm8ednFqScXVo5sJzCURbJx09o26detPDS7hqklMICVhNyAcQZdMikjjZkLaY/dX4ve/O+AfkC3eyoDHt3TT45HegV0ZpHqZZ5/2BsufjdLVY4JtjoJZySKsrITS/0lIxO9USpLzORh/tIm9u+PZJmuib5xvcJ1A6udAiPhpCgtd+RmObn3eI3rLQYPSesvRkHCVQBJ1gzoWG4tzb0KDqiyP33ZamOoGihV8Euem4ZZvpHcoI7uXAvjagP0BFSm92V+PF6YeibfdGeyAoG1Q/owXbhO0Zf1yKDUAjNbrC6rBFISnGL95TCLizEZyTppXJAMWpkIuK6Tmea7TQKyxkflvGxW8bbYqE1BnZcyJbIPnUI6hER+2wX/Y5sYx3uTWqx3rCvWOK62jznjN1PLXXWuvg/qwMHSoobil0ZRJunsvpeJN5Wghs4J+j26PnWtN0PBM/yStNA5rWIh48+y28+nNyHS45D8oxtdthz/npTKcVf+FsY40rqVtZQBGyjEShdhXoBFzwql2MmvjhQgY6kqnJil97n/xbM4xxPfJgT6etA96LdgtlsMlUhPlBZ4N3CLGTABhZziY0hbvBng9zUekoHDbu46u4/zE0E+hWwe4AVM8VhCLybUrKWr2g51rbcZ84z8831WQwTbGzf+qGtgnjWlnE=
